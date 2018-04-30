@@ -11,12 +11,14 @@ figure, subplot(2,2,1), imshow(X_r), title('componente roja')
 subplot(2,2,2), imshow(X_g), title('componente verde')
 subplot(2,2,3), imshow(X_b), title('componente azul')
 
-[hsx, X_h, X_s, X_i] = rgb2hsi(X, 'i');
+[hsx, X_h, X_s, X_i] = rgb2hsx(X, 'v');
 figure, imshow(hsx);
 figure, subplot(1,3,1), imshow(X_h), title('hue');
 subplot(1,3,2), imshow(X_s), title('saturation'); %Nos interesan la H y la S
 subplot(1,3,3), imshow(X_i), title('lightness');
 %% lab2xyz tests
+close all
+clear all
 %reference white point matrix
 CIE = [0.488718000000000,0.310680300000000,0.200601700000000;
        0.176204400000000,0.812984700000000,0.010810900000000;
@@ -39,9 +41,9 @@ figure, imshow(xyz), title('rgb to xyz');
 [rgb, r, g, b] = xyz2rgb(xyz, CIE);
 figure, imshow(xyz), title('xyz to rgb');
 
-[hsv] = rgb2hsv(X);
+[hsv] = rgb2hsl(X);
 figure, imshow(hsv), title('rgb to hsv MATLAB');
 
-[hsv, h, s, v] = rgb2hsx(X, 'v');
+[hsv, h, s, v] = rgb2hsx(X, 'l');
 figure, imshow(hsv), title('my rgb to hsv');
 
