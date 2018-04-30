@@ -1,6 +1,9 @@
 function [rgb,r,g,b] = xyz2rgb(xyz, RF)
 % Syntax
-% RF : reference matrix 
+% RF : reference matrix
+
+% Invert RF matrix
+RF = inv(RF)
 
 % initialize xyz variables
 x = xyz(:,:,1);

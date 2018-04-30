@@ -1,13 +1,14 @@
-function [lab,l,a,b] = rgb2lab(rgb)
+function [lab,l,a,b] = rgb2lab(rgb, CIE)
+% Syntax
+% RF : reference matrix
 
 % Variables assigment.
 rgb = im2double(rgb);
 r = rgb(:,:,1);
 g = rgb(:,:,2);
 b = rgb(:,:,3);
-
-% Performs CIE XYZ tranformation.
-[xyz,x,y,z] = rgb2xyz(rgb);
+   
+[xyz,x,y,z] = rgb2xyz(rgb, CIE);
 
 % Initialize lab variables
 l = zeros(size(r));

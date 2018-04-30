@@ -20,20 +20,20 @@ subplot(1,3,3), imshow(X_i), title('lightness');
 %reference white point matrix
 CIE = [0.488718000000000,0.310680300000000,0.200601700000000;
        0.176204400000000,0.812984700000000,0.010810900000000;
-       0.000000000000000,0.010204800000000,0.989795200000000]
+       0.000000000000000,0.010204800000000,0.989795200000000];
 
 X = imread('Board_Recorte.tif');
 
 [lab, l, a, b] = rgb2lab(X);
 figure, imshow(lab), title('rgb to lab');
 
-[xyzLAB, x, y, z] = lab2xyz(X);
-figure, imshow(xyz), title('lab to xyz');
+[rgb, r, g, b] = lab2rgb(X, CIE);
+figure, imshow(xyzLAB), title('lab to rgb');
 
-[xyz, x, y, z] = xyz2rgb(xyzLAB, CIE);
-figure, imshow(xyz), title('xyz to rgb after lab2xyz');
+% [xyz, x, y, z] = xyz2rgb(xyzLAB, CIE);
+% figure, imshow(xyz), title('xyz to rgb after lab2xyz');
 
-[xyz, x, y, z] = rgb2xyz(X);
+[xyz, x, y, z] = rgb2xyz(X, CIE);
 figure, imshow(xyz), title('rgb to xyz');
 
 [rgb, r, g, b] = xyz2rgb(xyz, CIE);
