@@ -12,6 +12,14 @@ subplot(2,2,2), imshow(X_g), title('componente verde')
 subplot(2,2,3), imshow(X_b), title('componente azul')
 
 [hsx, X_h, X_s, X_i] = rgb2hsi(X, 'i');
+figure, imshow(hsx);
 figure, subplot(1,3,1), imshow(X_h), title('hue');
 subplot(1,3,2), imshow(X_s), title('saturation'); %Nos interesan la H y la S
 subplot(1,3,3), imshow(X_i), title('lightness');
+%% lab2xyz tests
+X = imread('Board_Recorte.tif');
+[xyz, x, y, z] = lab2xyz(X);
+figure, imshow(xyz);
+figure, subplot(1,3,1), imshow(x), title('x');
+subplot(1,3,2), imshow(y), title('y'); %Nos interesan la H y la S
+subplot(1,3,3), imshow(z), title('z');
