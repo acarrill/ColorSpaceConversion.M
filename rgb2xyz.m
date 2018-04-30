@@ -1,4 +1,6 @@
-function [xyz,x,y,z] = rgb2xyz(rgb)
+function [xyz,x,y,z] = rgb2xyz(rgb, RF)
+% Syntax
+% RF : reference matrix 
 
 % Initialize variables.
 rgb = im2double(rgb);
