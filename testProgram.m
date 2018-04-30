@@ -41,9 +41,9 @@ figure, imshow(xyz), title('rgb to xyz');
 [rgb, r, g, b] = xyz2rgb(xyz, CIE);
 figure, imshow(xyz), title('xyz to rgb');
 
-[hsv] = rgb2hsl(X);
+[hsv] = rgb2hsv(X);
 figure, imshow(hsv), title('rgb to hsv MATLAB');
 
-[hsv, h, s, v] = rgb2hsx(X, 'l');
+[hsv, h, s, v] = rgb2hsx(X, 'v');
 figure, imshow(hsv), title('my rgb to hsv');
 

@@ -22,13 +22,16 @@ h = h/(2*pi);
 
 % Calculate respective l||i||v.
 x = (r+g+b)/3;
-if LIV == 'v', x = max(max(r,g),b)/2 - min(min(r,g),b); end;
+if LIV == 'v', x = max(max(r,g),b); end;
 if LIV == 'l', x = max(max(r,g),b); end;
 
 % S component calculation.
 s = 3.*min(min(r,g),b)./(r+g+b+eps);
 c = max(max(r,g),b) - min(min(r,g),b);
-if LIV == 'v', s = c./x; end; 
+if LIV == 'v', 
+    s = 1 - min(min(r,g),b)./max(max(r,g),b); 
+    s(max(max(r,g),b)==0) = 0;
+end; 
 if LIV == 'l', s = c/(1-abs(2*x-1)); end;
 
 % Return
