@@ -1,6 +1,6 @@
 function [hsx,h,s,x] = rgb2hsx(rgb, LIV)
 % Color space tranformation from RGB to HSX
-% Sintaxis: [h,s,X] = rgb2hsi(rgb)
+% Syntax: [h,s,X] = rgb2hsi(rgb)
 % h: hue component
 % s: saturation component
 % X: luminiscency component (intensity||value||lightness)
