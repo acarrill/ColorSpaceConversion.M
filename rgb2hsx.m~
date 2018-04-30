@@ -33,7 +33,7 @@ if LIV == 'v',
     s(max(max(r,g),b)==0) = 0;
 end; 
 if LIV == 'l', 
-    s(chroma==0) = 0;
+    s()
     s(x<=0.5) = chroma(x<=0.5)/2*x;
     s(x>0.5) = chroma(x>0.5)/(2-2*x);
 end;
