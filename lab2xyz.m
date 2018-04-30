@@ -1,4 +1,4 @@
-function [xyz,x,y,z] = lab2xyz(lab)
+function [xyz,x,y,z] = lab2xyz(lab, CIE)
 
 % variables assigment
 im2double(lab);
@@ -12,9 +12,10 @@ y = zeros(size(l));
 z = zeros(size(l));
 
 % Define reference tristimulus values. CIE RGB E
-x0 = 0.4887180 + 0.3106803 + 0.2006017;
-y0 = 0.1762044 + 0.8129847 + 0.0108109;
-z0 = 0.0000000 + 0.0102048 + 0.9897952;
+RowSum = sum(CIE,2);
+x0 = RowSum(1);
+y0 = RowSum(2);
+z0 = RowSum(3);
 
 % Consts
 P = (l+16)/116;

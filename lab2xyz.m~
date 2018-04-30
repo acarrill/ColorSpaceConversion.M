@@ -1,4 +1,4 @@
-function [xyz,x,y,z] = lab2xyz(lab)
+function [xyz,x,y,z] = lab2xyz(lab, CIE)
 
 % variables assigment
 im2double(lab);
@@ -12,7 +12,8 @@ y = zeros(size(l));
 z = zeros(size(l));
 
 % Define reference tristimulus values. CIE RGB E
-x0 = 0.4887180 + 0.3106803 + 0.2006017;
+
+x0 = (sum(CIE,2)(1);
 y0 = 0.1762044 + 0.8129847 + 0.0108109;
 z0 = 0.0000000 + 0.0102048 + 0.9897952;
 
@@ -23,9 +24,9 @@ P = (l+16)/116;
 id = P.^3 > 0.008856;
 
 % lab to xyz equations
-x(id) = x0*(P(id) + a/500).^3;
-y(id) = y0*P.^3;
-z(id) = z0*(P-b/200).^3
+x(id) = x0*(P(id) + a(id)/500).^3;
+y(id) = y0*P(id).^3;
+z(id) = z0*(P(id)-b(id)/200).^3; 
 
 % Return
 xyz(:,:,1) = x;

@@ -1,5 +1,5 @@
 function [hsx,h,s,x] = rgb2hsx(rgb, LIV)
-% Color space tranformation from RGB to HSI
+% Color space tranformation from RGB to HSX
 % Sintaxis: [h,s,X] = rgb2hsi(rgb)
 % h: hue component
 % s: saturation component
@@ -22,7 +22,7 @@ h = h/(2*pi);
 
 % Calculate respective l||i||v.
 x = (r+g+b)/3;
-if x == 'v', x = max(max(r,g),b)./2 - min(min(r,g),b); end;
+if x == 'v', x = max(max(r,g),b)/2 - min(min(r,g),b); end;
 if x == 'l', x = max(max(r,g),b); end;
 
 % S component calculation.

@@ -24,11 +24,11 @@ CIE = [0.488718000000000,0.310680300000000,0.200601700000000;
 
 X = imread('Board_Recorte.tif');
 
-[lab, l, a, b] = rgb2lab(X);
+[lab, l, a, b] = rgb2lab(X,CIE);
 figure, imshow(lab), title('rgb to lab');
 
 [rgb, r, g, b] = lab2rgb(X, CIE);
-figure, imshow(xyzLAB), title('lab to rgb');
+figure, imshow(rgb), title('lab to rgb');
 
 % [xyz, x, y, z] = xyz2rgb(xyzLAB, CIE);
 % figure, imshow(xyz), title('xyz to rgb after lab2xyz');
@@ -38,3 +38,10 @@ figure, imshow(xyz), title('rgb to xyz');
 
 [rgb, r, g, b] = xyz2rgb(xyz, CIE);
 figure, imshow(xyz), title('xyz to rgb');
+
+[hsv] = rgb2hsv(X);
+figure, imshow(hsv), title('rgb to hsv MATLAB');
+
+[hsv, h, s, v] = rgb2hsx(X, 'v');
+figure, imshow(hsv), title('my rgb to hsv');
+

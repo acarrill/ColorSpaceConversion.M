@@ -3,7 +3,7 @@ function [rgb,r,g,b] = xyz2rgb(xyz, RF)
 % RF : reference matrix
 
 % Invert RF matrix
-RF = inv(RF)
+RF = inv(RF);
 
 % initialize xyz variables
 x = xyz(:,:,1);
