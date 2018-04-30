@@ -1,4 +1,4 @@
-function [h,s,x] = rgb2hsi(rgb, LIV)
+function [hsx, h,s,x] = rgb2hsi(rgb, LIV)
 % Color space tranformation from RGB to HSI
 % Sintaxis: [h,s,X] = rgb2hsi(rgb)
 % h: hue component
@@ -19,10 +19,10 @@ h = theta;
 h(b>g) = 2*pi - theta(b>g);
 h = h/(2*pi);
 
-% Calculated respective l||i||v.
+% Calculate respective l||i||v.
 x = (r+g+b)/3;
 if x == 'v', x = max(max(r,g),b)./2 - min(min(r,g),b); end;
-if x == 'v', x = max(max(r,g),b); end;
+if x == 'l', x = max(max(r,g),b); end;
 
 % S component calculation.
 s = 3.*min(min(r,g),b)./(r+g+b+eps);

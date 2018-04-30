@@ -1,4 +1,5 @@
 close all;
+clear all;
 %% Leemos imagen y la pasamos a HSI
 X = imread('Board_Recorte.tif');
 figure, imshow(X), title('imagen original')
@@ -10,7 +11,7 @@ figure, subplot(2,2,1), imshow(X_r), title('componente roja')
 subplot(2,2,2), imshow(X_g), title('componente verde')
 subplot(2,2,3), imshow(X_b), title('componente azul')
 
-[X_h, X_s, X_i] = rgb2hsi(X, 'l');
+[hsx, X_h, X_s, X_i] = rgb2hsi(X, 'i');
 figure, subplot(1,3,1), imshow(X_h), title('hue');
 subplot(1,3,2), imshow(X_s), title('saturation'); %Nos interesan la H y la S
 subplot(1,3,3), imshow(X_i), title('lightness');
