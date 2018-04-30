@@ -1,4 +1,4 @@
-function [hsx,h,s,x] = rgb2hsi(rgb, LIV)
+function [hsx,h,s,x] = rgb2hsx(rgb, LIV)
 % Color space tranformation from RGB to HSI
 % Sintaxis: [h,s,X] = rgb2hsi(rgb)
 % h: hue component
