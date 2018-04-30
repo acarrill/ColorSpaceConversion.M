@@ -39,13 +39,13 @@ id8 = (yn > 0.008856) & (zn <= 0.008856);
 id9 = (yn <= 0.008856) & (zn > 0.008856);
 id10 = (yn <= 0.008856) & (zn <= 0.008856);
 
-% Definimos constantes.
+% consts.
 t0a = 7.787;
 t0b = 16/166;
 
 % l component calculation.
 l(id1) = 116*(yn(id1).^(1/3))-16;
-l(id2) = 116*(t0a*yn(id2)+t0b)-16;
+l(id2) = 903.3*yn(id2);
 
 % a component calculation.
 a(id3) = 500*(xn(id3).^(1/3)-yn(id3).^(1/3));
