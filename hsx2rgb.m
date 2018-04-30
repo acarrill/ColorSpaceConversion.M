@@ -13,4 +13,4 @@ r = zeros(size(h));
 g = zeros(size(h));
 b = zeros(size(h));
 
-
+% Initialize chroma 
