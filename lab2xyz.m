@@ -1,7 +1,7 @@
 function [xyz,x,y,z] = lab2xyz(lab)
 
 % variables assigment
-im2double(lab)
+im2double(lab);
 l = lab(:,:,1);
 a = lab(:,:,2);
 b = lab(:,:,3);
@@ -17,15 +17,15 @@ y0 = 0.1762044 + 0.8129847 + 0.0108109;
 z0 = 0.0000000 + 0.0102048 + 0.9897952;
 
 % Consts
-P = (l.+16)/116;
+P = (l+16)/116;
 
 % Identity for assigment 
 id = P.^3 > 0.008856;
 
 % lab to xyz equations
-x(id) = x0*(P + a/500).^3;
-y(id) = y0*P.^3;
-z(id) = z0*(P-b/200).^3
+x(id) = x0*(P(id) + a(id)/500).^3;
+y(id) = y0*P(id).^3;
+z(id) = z0*(P(id)-b(id)/200).^3; 
 
 % Return
 xyz(:,:,1) = x;
