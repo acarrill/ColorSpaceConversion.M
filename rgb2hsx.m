@@ -34,8 +34,8 @@ if LIV == 'v',
 end; 
 if LIV == 'l', 
     s(chroma==0) = 0;
-    s(x<=0.5) = chroma(x<=0.5)/2*x;
-    s(x>0.5) = chroma(x>0.5)/(2-2*x);
+    s(x<=0.5) = chroma(x<=0.5)./(2*x(x<=0.5));
+    s(x>0.5) = chroma(x>0.5)/(2-2*x(x<=0.5));
 end;
 
 % Return
