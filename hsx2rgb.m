@@ -30,7 +30,7 @@ if LIV=='i'
    z = (1-abs(mod(ht,2)-1));
    c = (3*x*s)./(1+z);
    I = c.*z;
-   m = x-c;
+   m = x.*(1-s);
 end;
 
 % Conditions for rgb variables assigment
@@ -45,6 +45,10 @@ for i=1:size(ht)
     end;
 end;
 
+% Addition of m to each channel
+r = r+m;
+g = g+m;
+b = b+m;
 
 % Return
 rgb(:,:,1) = r;

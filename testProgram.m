@@ -41,11 +41,19 @@ figure, imshow(xyz), title('rgb to xyz');
 [rgb, r, g, b] = xyz2rgb(xyz, CIE);
 figure, imshow(xyz), title('xyz to rgb');
 
+%% hsv proves
+
 [hsv] = rgb2hsv(X);
 figure, imshow(hsv), title('rgb to hsv MATLAB');
 
+[rgb] = hsv2rgb(hsv);
+figure, imshow(hsv), title('hsv to rgb MATLAB');
+
 [hsv, h, s, v] = rgb2hsx(X, 'v');
 figure, imshow(hsv), title('my rgb to hsv');
+
+[rgb, r, g, b] = hsx2rgb(X, 'v');
+figure, imshow(hsv), title('my hsv to rgb');
 
 %% HSL proves
 X = imread('Board_Recorte.tif');
