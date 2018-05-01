@@ -51,7 +51,7 @@ figure, imshow(hsv), title('my rgb to hsv');
 X = imread('Board_Recorte.tif');
 
 [hsl, h, s, v] = rgb2hsx(X, 'l');
-figure, imshow(hsv), title('my rgb to hsl');
+figure, imshow(hsl), title('my rgb to hsl');
 
 [rgb,r,g,b] = hsx2rgb(hsl, 'l');
 figure, imshow(hsv), title('hsl to rgb after aplly my rgb2hsl');
