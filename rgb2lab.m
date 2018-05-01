@@ -1,4 +1,4 @@
-function [lab,l,a,b] = rgb2lab(rgb, CIE)
+function [lab,l,a,b] = rgb2lab(rgb, RF)
 % Syntax
 % RF : reference matrix
 
@@ -8,17 +8,17 @@ r = rgb(:,:,1);
 g = rgb(:,:,2);
 b = rgb(:,:,3);
    
-[xyz,x,y,z] = rgb2xyz(rgb, CIE);
+[xyz,x,y,z] = rgb2xyz(rgb, RF);
 
 % Initialize lab variables
 l = zeros(size(r));
 a = zeros(size(g));
 b = zeros(size(b));
 
-% Define reference tristimulus values. CIE RGB E
-x0 = 0.4887180 + 0.3106803 + 0.2006017;
-y0 = 0.1762044 + 0.8129847 + 0.0108109;
-z0 = 0.0000000 + 0.0102048 + 0.9897952;
+% Define reference tristimulus values. 
+x0 = RF(1,1) + RF(1,2)+ RF(1,3);
+y0 = RF(2,2) + RF(2,2) + RF(2,3);
+z0 = RF(3,1) + RF(3,2) + RF(3,3);
 
 % Normalize tristimulus values.
 xn = x/x0;
