@@ -10,4 +10,4 @@ A simple library with several functions to performs color space conversion in Ma
 -hsx2rgb
 -lab2xyz
 
-It's included a simple test program used along the developping process.
+It's included a simple test program used along the developing process.
